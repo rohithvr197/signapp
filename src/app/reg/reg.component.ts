@@ -16,8 +16,11 @@ export class RegComponent implements OnInit {
       Name: [''], email: [''], Password: ['']
     })
 
+  }signup(){
+    this.http.post<any>("http://localhost:3000/user",this.signupForm.value).subscribe(res=>
+    {
+      alert();
+    })
   }
-  signup() {
-    this.http.post<any>('http://localhost:3000/user', this.signupForm.value).subscribe(res => { })
-  }
+
 }
